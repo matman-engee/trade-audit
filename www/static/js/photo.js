@@ -95,7 +95,7 @@
     //$('.camera-btn').on('click', takePicture);
     $(document).on( "click", ".camera-btn", function(){
 		alert("click captured");
-		takePicture;
+		takePicture();
 	});
 
     //getFeed();
