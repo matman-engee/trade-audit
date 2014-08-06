@@ -47,11 +47,16 @@
         takePicture = function (e) {
             //alert(e);
             //alert(destinationType);
+			alert("takePicture");
+			alert( Camera );
 
             if ( typeof Camera === "undefined" ){
                 console.log("Esta función solo está disponible en el emulador de android o en un dispositivo real");
                 return;
             }
+			
+			alert("after if");
+			
             var options = {
                 quality: 45,
                 targetWidth: 1000,
@@ -88,7 +93,10 @@
         };
 
     //$('.camera-btn').on('click', takePicture);
-    $(document).on( "click", ".camera-btn", takePicture );
+    $(document).on( "click", ".camera-btn", function(){
+		alert("click captured");
+		takePicture;
+	});
 
     //getFeed();
 
