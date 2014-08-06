@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+		<link rel="apple-touch-icon" sizes="114x114" href="images/splash/splash-icon.png"> 
+		<link rel="apple-touch-startup-image" href="images/splash/splash-screen.png" media="screen and (max-device-width: 320px)" /> 
+		<link rel="apple-touch-startup-image" href="images/splash/splash-screen@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
+		<link rel="apple-touch-startup-image" href="images/splash/splash-screen@3x.png" sizes="640x1096">
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<title>Trade audit | Compumundo</title>
+		<link href="static/css/style.css" rel="stylesheet" type="text/css">
+		<link href="static/css/color.css" rel="stylesheet" type="text/css">
+		<link href="static/css/buttons.css" rel="stylesheet" type="text/css">
+		<link href="static/css/retina.css" media="only screen and (-webkit-min-device-pixel-ratio: 2)" rel="stylesheet" />
+		<link href="static/css/slider.css" rel="stylesheet" type="text/css">
+		<link href="static/css/touchTouch.css" rel="stylesheet" type="text/css">
+		<link href="static/css/validationEngine.jquery.css" rel="stylesheet" type="text/css">
+
+		<script src="static/js/jquery.js"></script>
+		<script src="static/js/contact.js"></script>
+		<script src="static/js/swipe.js"></script>
+		<script src="static/js/klass.min.js"></script>
+		<!--<script src="scripts/photoswipe.js"></script>-->
+		<script src="static/js/touchTouch.js"></script>
+		<script src="static/js/retina.js"></script>
+		<script src="static/js/custom.js"></script>
+
+		<script src="static/js/fastclick.js"></script>
+		<!--<script src="static/js/jquery.jsonp.js"></script>-->
+		<script src="static/js/knockout-3.1.0.js"></script>
+		<!--<script src="scripts/knockout.mapping.js"></script>-->
+
+		<script src="static/js/config.js"></script>
+		<script src="static/js/model.js"></script>
+		<script src="static/js/get-data-nueva-auditoria.js"></script>
+		<script src="static/js/jquery.validationEngine-es.js"></script>
+		<script src="static/js/jquery.validationEngine.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<img src="static/img/logo.png" alt="img" class="logo replace-2x" width="91">
+		    <a href="#" class="deploy-navigation"></a>
+		    <a href="#" class="hide-navigation"></a>
+			<div class="clear"></div>
+		</div>
+
+		<div class="deployed-navigation">
+		    <a href="index.html" id="ico1" class="navigation-icon home"> HOME</a>
+		    <a href="about.html" id="ico2" class="navigation-icon list"> AUDITORIA </a>
+		    <a href="logout.html" id="ico3" class="navigation-icon arrow-left"> SALIR </a>
+		</div>
+
+		<div class="decoration"></div>
+
+		<div class="content">
+		    <div class="">
+              	<form id="nueva-auditoria" name="nueva-auditoria" action="nueva-auditoria-2.html" method="post">
+                  	<fieldset>
+                  		<div class="row"> 
+                    		<label for="region" id="name_label">Región</label>
+                    		<select data-bind="	options: regions,
+												optionsText: 'name',
+												optionsValue: 'id',
+												value: selectedRegionId,
+												optionsCaption: 'Elegir region...',
+												attr: { id: 'regions', name: 'regions' }"
+									class="validate[required]"
+									data-prompt-position="topLeft">
+							</select>
+							<span class="error" id="nameError">Seleccione una region!</span>
+						</div>
+						<!--
+						<select name="region">
+							<option value="0">SELECCIONAR</option>
+							<option value="CENTRO">CENTRO</option>
+							<option value="CUYO">CUYO</option>
+							<option value="NEA">NEA</option>
+							<option value="NOA">NOA</option>
+							<option value="SUR">SUR</option>
+						</select>
+						-->
+						
+						<div class="row">
+							<label for="sucursal" id="email_label">Sucursal</label>
+	                    	<select data-bind="	options: selectedRegion() && selectedRegion().length > 0 ? 
+	                    								 selectedRegion()[0].branches : [],
+												optionsText: 'name',
+												optionsValue: 'id',
+												value: selectedBranchId,
+												optionsCaption: 'Elegir sucursal...',
+												attr: { id: 'branches', name: 'branches' }"
+									class="validate[required]"
+									data-prompt-position="topLeft">
+							</select>
+							<span class="error" id="emailError">Seleccione una sucursal!</span>
+						</div>
+						<!--
+						<select name="sucursal">
+							<option value="0">SELECCIONAR</option>
+							<option value="CENTRO">URUGUAY</option>
+							<option value="CUYO">LAVALLE</option>
+							<option value="NEA">SANTA FE</option>
+							<option value="NOA">FLORIDA</option>
+							<option value="SUR">ALTO PALERMO</option>
+						</select>
+						-->
+						
+						<div class="row">
+							<label for="Responsable" id="message_label">Responsable</label>
+	                    	<select data-bind="	options: selectedBranch() && selectedBranch().length > 0 ? 
+	                    								 selectedBranch()[0].managers : [],
+												optionsText: 'name',
+												optionsValue: 'id',
+												value: selectedManagerId,
+												optionsCaption: 'Elegir responsable...',
+												attr: { id: 'managers', name: 'managers' }"
+									class="validate[required]"
+									data-prompt-position="topLeft">
+							</select>						
+							<!--
+							<select name="Responsable">
+								<option value="0">SELECCIONAR</option>
+								<option value="CENTRO">GERENTE - PABLO MARTINEZ</option>
+								<option value="CUYO">SUBGERENTE - ANDRES SUAREZ</option>
+								<option value="NEA">SUBGERENTE - JUAN RAMOS</option>
+							</select>
+							-->
+							<span class="error" id="messageError">Seleccione un responsable!</span>
+						</div>
+
+						<p class="contact-button-house">
+							<input type="submit" name="submitMessage" class="full-screen-button button gblue" id="contactSubmitBtn" value="CONTINUAR"/>
+						</p>
+                  	</fieldset>
+              	</form>
+		    </div>
+		    <div class="clear"></div>   
+		</div>
+
+		<div class="decoration"></div>
+
+		<p class="center-text copyright">
+			Un desarrollo de <a href="http://www.engee.com.ar" target="_blank">engee</a>
+		</p>
+
+		<!--
+		
+		-->
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

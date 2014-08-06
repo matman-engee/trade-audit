@@ -1,0 +1,46 @@
+<script type="text/html" id="select-template">
+	<label data-bind="text: question().question(), attr:{ for: 'q'+question().id() }"></label>
+	<select data-bind="	options: question().options,
+						optionsText: 'name',
+						optionsValue: 'id',
+						value: auditResponse().value,
+						optionsCaption: 'Elegir...',
+						attr: { id: 'q'+question().id(), name: 'q'+question().id() }">
+	</select>
+</script>
+
+<script type="text/html" id="text-template">
+	<label data-bind="text: question().question(), attr:{ for: 'q'+question().id() }"></label>
+	<input type="text" data-bind="	attr: {	id: 'q'+question().id(), name: 'q'+question().id() }, 
+									value: auditResponse().value">
+</script>
+		
+<script type="text/html" id="image-template">
+	<label data-bind="text: question().question(), attr:{ for: 'q'+question().id() }"></label>
+	<input 	type="file" accept="image/*" 
+			data-bind="attr: { 	id: 'q'+question().id(),	
+								name: 'q'+question().id(), 
+								'data-index': $index, 
+								'data-id': question().id() }
+						">
+	<a class="topcoat-icon-button--quiet camera-btn" href="#" data-destinationType="DATA_URL">
+    	<!--<span class="topcoat-icon topcoat-icon--camera"></span>-->
+    	<img src="static/img/icons/cameras.png">
+	</a>
+	<div class="images" data-bind="attr:{ id: 'images-'+question().id(), name: 'images-'+question().id() } ">
+		<img data-bind="attr: { src: auditResponse().value }, click: remove" 
+			 height="100" width="100">
+	</div>
+</script>
+
+<script type="text/html" id="textarea-template">
+	<label data-bind="text: question().question(), attr:{ for: 'q'+question().id() }"></label>
+	<textarea data-bind="attr: { id: 'q'+question().id(), name: 'q'+question().id() },
+						 value: auditResponse().value"></textarea>
+</script>
+
+<script type="text/html" id="checkbox-template">
+	<label data-bind="text: question().question(), attr:{ for: 'q'+question().id() }"></label>
+	<input type="checkbox" data-bind="	attr: { id: 'q'+question().id(), name: 'q'+question().id() },
+										checked: auditResponse().value">
+</script>
