@@ -28,8 +28,10 @@
     	<img src="static/img/icons/cameras.png">
 	</a>
 	<div class="images" data-bind="attr:{ id: 'images-'+question().id(), name: 'images-'+question().id() } ">
+		<!-- ko if : auditResponse().value != null -->
 		<img data-bind="attr: { src: auditResponse().value }, click: remove" 
 			 height="100" width="100">
+		<!-- /ko -->
 	</div>
 </script>
 

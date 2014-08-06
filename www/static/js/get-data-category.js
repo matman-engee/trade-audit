@@ -88,7 +88,7 @@ function ViewModel(data){
 
 	self.savePhoto = function(data){
 		// esto funciona pero solo admite una imagen
-		alert("data.index: "+data.index);
+		//alert("data.index: "+data.index);
 		self.auditCategories()[0].category().categoryQuestions()[data.index].auditResponse().value(data.data);
 	}
 }
