@@ -1,5 +1,7 @@
 Gracias por utilizar Trade Audit
 <script src="phonegap.js"></script>
 <script>
-	setTimeout( navigator.app.exitApp() , 5000 );
+	if ( typeof navigator.app != "undefined" ){
+		setTimeout( navigator.app.exitApp() , 5000 );
+	}
 </script>
