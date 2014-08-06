@@ -63,9 +63,9 @@
                 quality: 45,
                 targetWidth: 1000,
                 targetHeight: 1000,
-                destinationType: Camera.DestinationType.DATA_URL,
-                encodingType: Camera.EncodingType.JPEG,
-                sourceType: Camera.PictureSourceType.CAMERA
+                destinationType: navigator.camera.DestinationType.DATA_URL,
+                encodingType: navigator.camera.EncodingType.JPEG,
+                sourceType: navigator.camera.PictureSourceType.CAMERA
             };
 
             navigator.camera.getPicture(
