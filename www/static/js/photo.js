@@ -103,3 +103,9 @@
     //getFeed();
 
 }());
+
+document.addEventListener("deviceready",onDeviceReady,false);
+
+function onDeviceReady() {
+    alert(navigator.camera);    
+}
