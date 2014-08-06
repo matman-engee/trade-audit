@@ -48,7 +48,7 @@
             //alert(e);
             //alert(destinationType);
 			alert("takePicture");
-			alert( Camera );
+			//alert( Camera );
 
 			/*
             if ( typeof Camera === "undefined" ){
