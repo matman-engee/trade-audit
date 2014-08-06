@@ -50,10 +50,12 @@
 			alert("takePicture");
 			alert( Camera );
 
+				/*
             if ( typeof Camera === "undefined" ){
                 console.log("Esta función solo está disponible en el emulador de android o en un dispositivo real");
                 return;
             }
+			*/
 			
 			alert("after if");
 			
