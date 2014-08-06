@@ -12,6 +12,7 @@
     <preference name="SplashScreen" value="splash" />
 	<preference name="SplashScreenDelay" value="1000" />
 	<plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
+	<gap:plugin name="org.apache.cordova.camera" version="0.2.9" />
 	<feature name="http://api.phonegap.com/1.0/camera"/>
 	<feature name="http://api.phonegap.com/1.0/file"/>
 </widget>
